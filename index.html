@@ -9,26 +9,56 @@
 <body>
   <h1>Khanna Fabric</h1>
   <p>भारतीय संस्कृति से सजी एक सुंदर जगह</p>
-  <img src="main-banner.jpg" alt="Main Banner" class="main-image">
-  <img src="villa.jpg" alt="Villa" class="main-image">
-
-  <section class="about">
-    <h2>हमारे बारे में</h2>
-    <p>हम परंपराओं और आधुनिकता का संगम हैं।</p>
-    <img src="about.jpg" alt="हमारे बारे में" class="about-img">
-  </section>
 
   <section class="gallery">
     <h2>हमारी गैलरी</h2>
     <div class="gallery-container">
-      <img src="img1.png" alt="Image 1">
-      <img src="img2.png" alt="Image 2">
-      <img src="img3.png" alt="Image 3">
+      <div class="product">
+        <img src="img1.png" alt="Image 1">
+        <div class="form-container">
+          <input type="text" placeholder="नाम" id="name1">
+          <input type="text" placeholder="पता" id="address1">
+          <input type="text" placeholder="शहर" id="city1">
+          <input type="text" placeholder="मोबाइल नंबर" id="mobile1">
+          <button onclick="sendOrder('1', 'Bandhani Green - ₹999')">Order करें</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="img2.png" alt="Image 2">
+        <div class="form-container">
+          <input type="text" placeholder="नाम" id="name2">
+          <input type="text" placeholder="पता" id="address2">
+          <input type="text" placeholder="शहर" id="city2">
+          <input type="text" placeholder="मोबाइल नंबर" id="mobile2">
+          <button onclick="sendOrder('2', 'Saree Red Silk - ₹1299')">Order करें</button>
+        </div>
+      </div>
+      <div class="product">
+        <img src="img3.png" alt="Image 3">
+        <div class="form-container">
+          <input type="text" placeholder="नाम" id="name3">
+          <input type="text" placeholder="पता" id="address3">
+          <input type="text" placeholder="शहर" id="city3">
+          <input type="text" placeholder="मोबाइल नंबर" id="mobile3">
+          <button onclick="sendOrder('3', 'Designer Suit - ₹1499')">Order करें</button>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
     <p>© 2025 Khanna Fabric | सभी अधिकार सुरक्षित</p>
   </footer>
+
+<script>
+function sendOrder(id, product) {
+  const name = document.getElementById("name" + id).value;
+  const address = document.getElementById("address" + id).value;
+  const city = document.getElementById("city" + id).value;
+  const mobile = document.getElementById("mobile" + id).value;
+  const message = `🛍 *New Order*\n\n📦 Product: ${product}\n👤 Name: ${name}\n🏠 Address: ${address}\n🏙 City: ${city}\n📞 Mobile: ${mobile}`;
+  window.open(`https://wa.me/919216044335?text=${encodeURIComponent(message)}`, "_blank");
+}
+</script>
 </body>
 </html>

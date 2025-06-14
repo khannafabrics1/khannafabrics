@@ -1,45 +1,48 @@
 body {
-  background-color: #fff8f0;
   font-family: sans-serif;
+  background: #fff8f0;
   text-align: center;
-  padding: 20px;
-}
-.main-image {
-  width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-img {
-  margin-top: 20px;
-  border-radius: 10px;
-}
-.about {
-  background-color: #fff0f0;
-  padding: 30px 20px;
-  margin-top: 30px;
-  border-radius: 10px;
-}
-.about-img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  margin: 20px 0;
+  padding: 10px;
 }
 .gallery-container {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
-.gallery-container img {
-  width: 30%;
-  max-width: 200px;
-  height: auto;
+.product {
+  border: 1px solid #ccc;
   border-radius: 10px;
+  padding: 15px;
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+}
+.product img {
+  width: 100%;
+  border-radius: 10px;
+}
+.form-container {
+  margin-top: 10px;
+}
+.form-container input {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.form-container button {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 footer {
   margin-top: 40px;
-  background-color: #ffeded;
   padding: 20px;
+  background: #ffeded;
 }
