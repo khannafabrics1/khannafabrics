@@ -11,54 +11,66 @@
   <p>भारतीय संस्कृति से सजी एक सुंदर जगह</p>
 
   <section class="gallery">
-    <h2>हमारी गैलरी</h2>
-    <div class="gallery-container">
-      <div class="product">
-        <img src="img1.png" alt="Image 1">
-        <div class="form-container">
-          <input type="text" placeholder="नाम" id="name1">
-          <input type="text" placeholder="पता" id="address1">
-          <input type="text" placeholder="शहर" id="city1">
-          <input type="text" placeholder="मोबाइल नंबर" id="mobile1">
-          <button onclick="sendOrder('1', 'Bandhani Green - ₹999')">Order करें</button>
-        </div>
-      </div>
-      <div class="product">
-        <img src="img2.png" alt="Image 2">
-        <div class="form-container">
-          <input type="text" placeholder="नाम" id="name2">
-          <input type="text" placeholder="पता" id="address2">
-          <input type="text" placeholder="शहर" id="city2">
-          <input type="text" placeholder="मोबाइल नंबर" id="mobile2">
-          <button onclick="sendOrder('2', 'Saree Red Silk - ₹1299')">Order करें</button>
-        </div>
-      </div>
-      <div class="product">
-        <img src="img3.png" alt="Image 3">
-        <div class="form-container">
-          <input type="text" placeholder="नाम" id="name3">
-          <input type="text" placeholder="पता" id="address3">
-          <input type="text" placeholder="शहर" id="city3">
-          <input type="text" placeholder="मोबाइल नंबर" id="mobile3">
-          <button onclick="sendOrder('3', 'Designer Suit - ₹1499')">Order करें</button>
-        </div>
-      </div>
+    <div class="product">
+      <img src="img1.png" alt="BANDHANI GREEN" />
+      <h3>BANDHANI GREEN</h3>
+      <p>SKU: CHOLI BANDHANI GREEN</p>
+      <p>₹999</p>
+      <button onclick="openForm()">Order Now</button>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Khanna Fabric | सभी अधिकार सुरक्षित</p>
-  </footer>
+  <div id="orderForm" class="form-container">
+    <h2>Order Details</h2>
+    <input type="text" id="name" placeholder="Name" />
+    <input type="text" id="address" placeholder="Full Address" />
+    <input type="text" id="landmark" placeholder="Landmark" />
+    <input type="text" id="city" placeholder="City" />
+    <input type="text" id="state" placeholder="State" />
+    <input type="text" id="pincode" placeholder="Pincode" />
+    <input type="text" id="mobile" placeholder="Mobile Number" />
+    <input type="text" id="mobile2" placeholder="Second Mobile Number" />
+    <select id="delivery">
+      <option value="Online Payment">Online Payment</option>
+      <option value="Cash On Delivery (+₹100 Extra)">Cash On Delivery (+₹100 Extra)</option>
+    </select>
+    <div class="btns">
+      <button onclick="closeForm()">Close</button>
+      <button onclick="sendToWhatsApp()">Send to WhatsApp</button>
+    </div>
+  </div>
 
-<script>
-function sendOrder(id, product) {
-  const name = document.getElementById("name" + id).value;
-  const address = document.getElementById("address" + id).value;
-  const city = document.getElementById("city" + id).value;
-  const mobile = document.getElementById("mobile" + id).value;
-  const message = `🛍 *New Order*\n\n📦 Product: ${product}\n👤 Name: ${name}\n🏠 Address: ${address}\n🏙 City: ${city}\n📞 Mobile: ${mobile}`;
-  window.open(`https://wa.me/919216044335?text=${encodeURIComponent(message)}`, "_blank");
-}
-</script>
+  <script>
+    function openForm() {
+      document.getElementById('orderForm').style.display = 'block';
+    }
+    function closeForm() {
+      document.getElementById('orderForm').style.display = 'none';
+    }
+    function sendToWhatsApp() {
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const landmark = document.getElementById('landmark').value;
+      const city = document.getElementById('city').value;
+      const state = document.getElementById('state').value;
+      const pincode = document.getElementById('pincode').value;
+      const mobile = document.getElementById('mobile').value;
+      const mobile2 = document.getElementById('mobile2').value;
+      const delivery = document.getElementById('delivery').value;
+
+      const msg = `New Order:
+Name: ${name}
+Address: ${address}
+Landmark: ${landmark}
+City: ${city}
+State: ${state}
+Pincode: ${pincode}
+Mobile: ${mobile}
+Second Mobile: ${mobile2}
+Delivery: ${delivery}`;
+
+      window.open(`https://wa.me/919216044335?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+  </script>
 </body>
 </html>
